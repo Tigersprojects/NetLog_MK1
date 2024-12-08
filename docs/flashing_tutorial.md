@@ -1,7 +1,6 @@
 # Flashing the Firmware
 
-Open `NetLog_MK1.ino` in Arduino IDE and install the following
-boards and libraries:
+Open `NetLog_MK1.ino` in Arduino IDE and install the following boards and libraries:
 
 1. [Install the ESP32 boards](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
 
@@ -22,7 +21,7 @@ Then, under the _Tools_ menu:
 - set _Partition Scheme_ to _16M Flash (2MB APP/12.5MB FATFS)_
 
 Once you've done that, upload the sketch by clicking on the upload button.
-![Selecting the board](../images/upload_screenshot.png)
+![Selecting the board](../pictures/upload_screenshot.png)
 
 > Flashing the firmware through hardware CDC is not possible
     once the device is mounted as a USB flash drive.
