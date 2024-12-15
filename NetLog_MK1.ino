@@ -31,7 +31,7 @@
 
 #include "config.h"
 
-// Define stuff //
+// Define stuff
 String cur_ssid, csv_str;
 
 char cur_bssid[18],
@@ -64,7 +64,7 @@ bool fileExists(const char *path) {
 }
 
 
-// Writes to a file
+// Prints to a file
 void fileAppend(const char *path, const char *message) {
   File file = fatfs.open(path, FILE_WRITE);
 
@@ -75,7 +75,7 @@ void fileAppend(const char *path, const char *message) {
 }
 
 
-// Makes a string CSV-safe
+// Returns a CSV-safe string
 String CSVSafeString(String input) {
   String output = "";
 
@@ -93,7 +93,7 @@ String CSVSafeString(String input) {
 // Setup
 void setup() {
 
-  // Initialize NeoPixel
+  // Init NeoPixel
   rgb.begin();
 
   rgb.setPixelColor(0, rgb.Color(255, 255, 0));
@@ -107,7 +107,7 @@ void setup() {
 
   delay(1000);
 
-  // Initialize storage
+  // Init storage
   flash.begin();
 
   // Configure usb_msc
@@ -125,7 +125,7 @@ void setup() {
     TinyUSBDevice.attach();
   }
 
-  // Init fs on flash
+  // Init flash FS
   while (!fatfs.begin(&flash)) {
     rgb.setPixelColor(0, rgb.Color(255, 0, 0));
     rgb.show();
@@ -147,7 +147,7 @@ void setup() {
   }
 
   // Connect to GPS
-  neogps.begin(9600, SERIAL_8N1, GPS_RXD2, GPS_TXD2);
+  neogps.begin(GPS_BAUD, SERIAL_8N1, GPS_RXD2, GPS_TXD2);
   delay(2000);
 
   // Startup successful (with cool fade effect)
@@ -169,7 +169,7 @@ void setup() {
 // Loop
 void loop() {
 
-  // See if there is available data from the GPS module
+  // Check if there is available data from the GPS module
   for (unsigned long start = millis(); millis() - start < 1000;) {
     while (neogps.available()) {
       if (gps.encode(neogps.read())) {
@@ -181,7 +181,7 @@ void loop() {
   // Start scanning networks if the GPS module has a connection
   if (gps.location.isValid() && gps.satellites.value() != 0) {
 
-    // Make sure NeoPixel is off
+    // Make sure the NeoPixel is off
     rgb.setPixelColor(0, rgb.Color(0, 0, 0));
     rgb.show();
 
@@ -236,7 +236,7 @@ void loop() {
       // Save network info
       if (!exists) {
 
-        // Flash NeoPixel to signal network
+        // Flash NeoPixel to signal new network
         rgb.setPixelColor(0, rgb.Color(255, 255, 255));
         rgb.show();
 
@@ -247,12 +247,12 @@ void loop() {
 
         delay(100);
 
-        // Add SSID, BSSID, and RSSI to CSV
+        // Add SSID, BSSID, and RSSI to CSV file
         csv_str = CSVSafeString(cur_ssid) + "," +
                   CSVSafeString(cur_bssid) + "," +
                   CSVSafeString(String(WiFi.RSSI(i)) + " dBm") + ",";
 
-        // Append auth to CSV
+        // Append auth to CSV file
         switch (WiFi.encryptionType(i)) {
           case WIFI_AUTH_OPEN:
             csv_str += CSVSafeString("Open"); break;
@@ -288,7 +288,7 @@ void loop() {
         
         } csv_str += ",";
 
-        // Save NetLog position and speed (skipping latitude)
+        // Save NetLog position and speed (skipping altitude)
         csv_str += CSVSafeString(String(
           ((gps.location.lat() >= 0) ? "+" : "") + String(gps.location.lat(), 6) + " " +
           ((gps.location.lng() >= 0) ? "+" : "") + String(gps.location.lng(), 6)

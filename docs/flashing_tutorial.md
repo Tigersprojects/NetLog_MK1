@@ -5,9 +5,9 @@ Open `NetLog_MK1.ino` in Arduino IDE and install the following boards and librar
 1. [Install the ESP32 boards](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
 
 2. Install the following libraries:
-    - TinyGPSplus
+    - TinyGPSPlus
     - Adafruit NeoPixel
-    - SdFat
+    - SdFat - Adafruit Fork
     - Adafruit SPIFlash
     - Adafruit TinyUSB
 

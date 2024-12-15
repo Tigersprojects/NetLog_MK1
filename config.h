@@ -14,9 +14,10 @@ const char *data_filename = "NetLog_data.csv",
            *netlog_vid = "NetLog",
            *netlog_name = "NetLog MK1";
 
-// For the Lolin S3 Pro //
+// For the GY-NEO6MV2 (and many other GPS modules) //
+#define GPS_BAUD 9600
+
+// Lolin S3 Pro //
 #define GPS_RXD2 10
 #define GPS_TXD2 9
-
-#define SD_CS_PIN 46
 #endif
