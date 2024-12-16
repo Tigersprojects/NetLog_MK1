@@ -43,9 +43,12 @@ For the GPS module to fit in the case, you will need to trim the solder blobs on
 ![Flush solder blobs](../pictures/trim_gps.jpg)
 
 ## Step 3: Printing the cover
-Print `lid.stl` with **clear** PLA or PET(G). This is so that the LEDs can shine through the cover.
+Print `lid_text.stl` or `lid_logo.stl` with **clear** PLA or PET(G). This is so that the LEDs can shine through the cover.
 ![Cover](../pictures/lid.jpg)
 Those weird towers on the cover hold the components in place.
+
+> `lid_text.stl` reads _NetLog MK1_ on the bottom of the cover, whereas `lid_logo.stl` has the the NetLog MK1 logo (found in `logo.svg`) in the
+    bottom right corner. I'll use `lid_text.stl` for the tutorial.
 
 ## Step 4: Assembling the device
 Now we have the case, cover, and components ready for assembly.

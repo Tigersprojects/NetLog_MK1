@@ -47,6 +47,17 @@ lid_thickness = 4;
 
 text_font = "Space Mono:style=Bold";
 
+logo_path = "logo.svg";
+logo_dpi = 64;
+
+
+/*
+ * Puts the logo defined by logo_path in
+ * the bottom right corner instead
+ * of the "NetLog MK1" text.
+*/
+use_logo = false;
+
 
 // A hole for a screw //
 module screwHole() {
@@ -244,19 +255,28 @@ if (lid) {
         lid_thickness
       ]);
 
+      if (use_logo) {
+        // Logo //
+        translate([case_x / 1.2 + 2 + wall_thickness,
+                  case_y / 1.2 + wall_thickness * 2 - 2])
 
-      // Text //
-      translate([
-        case_x / 2 + 5 + wall_thickness,
-        case_y + wall_thickness * 2 - 2,
-        wall_thickness / 2
-      ]) rotate([180]) linear_extrude(wall_thickness / 2) 
-        text(
-          "NetLog MK1",
-          6, font=text_font,
-          halign="center",
-          valign="bottom"
-        );
+        rotate([0, 0, 180]) linear_extrude(1)
+        import(logo_path, center=true, logo_dpi);
+      } else {
+
+        // "NetLog MK1" text //
+        translate([
+          case_x / 2 + 5 + wall_thickness,
+          case_y + wall_thickness * 2 - 2,
+          wall_thickness / 2
+        ]) rotate([180]) linear_extrude(wall_thickness / 2)
+          text(
+            "NetLog MK1",
+            6, font=text_font,
+            halign="center",
+            valign="bottom"
+          );
+      }
 
 
       // More screw holes //
