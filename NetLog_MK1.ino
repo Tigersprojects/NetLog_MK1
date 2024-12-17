@@ -11,8 +11,8 @@
   "USB-OTG CDC (TinyUSB)" to avoid booting
   the device into DFU mode.
 
-  Format the flash with FAT12 or FAT16
-  for NetLog to work properly.
+  Format the FATFS partition with FAT12 or FAT16
+  for NetLog MK1 to work properly.
 */
 
 #include <WiFi.h>

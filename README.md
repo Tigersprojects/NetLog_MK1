@@ -12,7 +12,7 @@ From there, you can open the CSV file with any spreadsheet software (like LibreO
 - [Build your own](docs/build_tutorial.md)
 - [Flashing the firmware](docs/flashing_tutorial.md)
 
-## RGB LED light codes
+## RGB LED Light Codes
 | Light code     | Meaning                               |
 |----------------|---------------------------------------|
 | Static yellow  | Device starting                       |

@@ -9,7 +9,7 @@ Open `NetLog_MK1.ino` in Arduino IDE and install the following boards and librar
     - Adafruit NeoPixel
     - SdFat - Adafruit Fork
     - Adafruit SPIFlash
-    - Adafruit TinyUSB
+    - Adafruit TinyUSB Library
 
 If you want, you can configure some parameters in `config.h`. Next,
 select `LOLIN S3 Pro` and the connected serial port in the board selector.
