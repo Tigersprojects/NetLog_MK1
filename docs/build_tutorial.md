@@ -48,7 +48,7 @@ Print `lid_text.stl` or `lid_logo.stl` with **clear** PLA or PET(G). This is so 
 Those weird towers on the cover hold the components in place.
 
 > `lid_text.stl` reads _NetLog MK1_ on the bottom of the cover, whereas `lid_logo.stl` has the the NetLog MK1 logo (found in `logo.svg`) in the
-    bottom right corner. I'll use `lid_text.stl` for the tutorial.
+    bottom right corner. The difference is purely cosmetic and has no effect on functionality. I'll use `lid_text.stl` for the tutorial.
 
 ## Step 4: Assembling the device
 Now we have the case, cover, and components ready for assembly.
