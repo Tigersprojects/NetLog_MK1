@@ -89,5 +89,5 @@ with open(args.output, 'w', newline='') as csvfile:
     writer.writerows(deduped_rows)
 
 # Print info
-print(f'\nMerged {len(all_rows)} networks, of which {duplicates} are duplicates.')
-print(f'\033[1mTotal: {len(all_rows) - duplicates + 1} networks.\033[22m')
+print(f'\nMerged {len(all_rows)} networks, of which {duplicates} are duplicate(s).')
+print(f'\033[1mTotal: {len(all_rows) - duplicates} networks.\033[22m')

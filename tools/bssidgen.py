@@ -29,8 +29,6 @@ parser.add_argument('outfile')
 
 args = parser.parse_args()
 
-#print(f'in: {args.infile}, out: {args.outfile}')
-
 # Make sure infile exists
 if not os.path.isfile(args.infile):
     print(f'{sys.argv[0]}: {args.infile}: not a file')
