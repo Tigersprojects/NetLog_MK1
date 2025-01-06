@@ -13,7 +13,7 @@ From there, you can open the CSV file with any spreadsheet software (like LibreO
 - [Flashing the firmware](docs/flashing_tutorial.md)
 
 ## RGB LED Light Codes
-| Light code     | Meaning                               |
+| Light Code     | Meaning                               |
 |----------------|---------------------------------------|
 | Static yellow  | Device starting                       |
 | Static red     | FS error. Format with FAT12 or FAT16  |

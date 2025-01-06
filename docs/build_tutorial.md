@@ -9,15 +9,15 @@ To build a NetLog MK1, you need the following tools and parts:
 | Wire strippers        |
 | 2.5mm hex screwdriver |
 
-| Parts                          |
-|--------------------------------|
-| LOLIN S3 Pro dev board         |
-| 4x M3 threaded inserts         |
-| 4x M3 hex socket cap screws    |
-| GY-NEO6MV2 GPS module          |
-| 28 x 28 x ~9mm uFL GPS antenna |
-| JST SH 4-pin connector         |
-| 4x JST SH cables               |
+| Parts                            |
+|----------------------------------|
+| LOLIN S3 Pro dev board           |
+| 4x M3 threaded inserts           |
+| 4x 10mm M3 hex socket cap screws |
+| GY-NEO6MV2 GPS module            |
+| 28 x 28 x ~9mm uFL GPS antenna   |
+| JST SH 4-pin connector           |
+| 4x JST SH cables                 |
 
 ## Step 1: Building the case
 Print `case.stl` with PLA or PET(G). Next, insert four M3 threaded inserts into the screw holes.

@@ -25,7 +25,7 @@ Once you've done that, upload the sketch by clicking on the upload button.
 
 > Flashing the firmware through hardware CDC is not possible
     once the device is mounted as a USB flash drive.
-    Instead of booting into DFU mode, you can set _Upload Mode_ to
+    Instead of booting it into DFU mode, you can set _Upload Mode_ to
     _USB-OTG CDC (TinyUSB)_.
 
 Once you've flashed the firmware and restarted the device, the LED will glow yellow and then turn solid red.
