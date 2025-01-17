@@ -1,6 +1,9 @@
 /*
-  NetLog MK1 - The ESP32 WiFi logger
+  NetLog MK1 - The ESP32 WiFi wardriving device
+
   by Tigersprojects
+
+  ---------------------------------------------
 
   Designed for an ESP32-S3 with a GPS module.
 
@@ -109,6 +112,10 @@ void setup() {
 
   // Init storage
   flash.begin();
+
+  // Configure TinyUSB
+  TinyUSBDevice.setManufacturerDescriptor(netlog_vid);
+  TinyUSBDevice.setProductDescriptor(netlog_name);
 
   // Configure usb_msc
   usb_msc.setID(netlog_vid, netlog_name, netlog_ver);

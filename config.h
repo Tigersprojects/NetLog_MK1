@@ -7,10 +7,12 @@ Adafruit_NeoPixel rgb(1, 38, NEO_RGBW + NEO_KHZ800);
 // NeoPixel brightness from 0 - 255 //
 const uint8_t neopixel_brightness = 100;
 
+// Filenames //
 const char *data_filename = "NetLog_data.csv",
            *bssid_filename = "NetLog_bssids.txt",
 
-           *netlog_ver = "1.14",
+           // USB info //
+           *netlog_ver = "1.15",
            *netlog_vid = "NetLog",
            *netlog_name = "NetLog MK1";
 
