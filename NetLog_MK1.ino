@@ -108,7 +108,7 @@ void setup() {
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
 
-  delay(1000);
+  delay(500);
 
   // Init storage
   flash.begin();
@@ -155,7 +155,7 @@ void setup() {
 
   // Connect to GPS
   neogps.begin(GPS_BAUD, SERIAL_8N1, GPS_RXD2, GPS_TXD2);
-  delay(2000);
+  delay(500);
 
   // Startup successful (with cool fade effect)
   for (int b = 0; b < neopixel_brightness; b++) {
@@ -185,8 +185,8 @@ void loop() {
     }
   }
 
-  // Start scanning networks if the GPS module has a connection
-  if (gps.location.isValid() && gps.satellites.value() != 0) {
+  // Start scanning networks if the GPS module has a fix
+  if (gps.location.isValid() && gps.satellites.value() >= minimum_satellites) {
 
     // Make sure the NeoPixel is off
     rgb.setPixelColor(0, rgb.Color(0, 0, 0));
@@ -212,7 +212,7 @@ void loop() {
 
       while (bssid_file.available()) {
 
-        // Check first character for maximum speed
+        // Check first character for better speed
         temp_char = bssid_file.read();
 
         if (temp_char == cur_bssid[0]) {
@@ -220,7 +220,7 @@ void loop() {
           // Read entire string if the characters match
           memset(temp_bssid, '\0', 18);
 
-          while (temp_char != '\n') {
+          while (temp_char != '\n' && bssid_file.available() && strlen(temp_bssid) < 17) {
             strncat(temp_bssid, &temp_char, 1);
             temp_char = bssid_file.read();
           }

@@ -6,7 +6,7 @@ the ESP32-S3 and an inexpensive GPS module.
 The NetLog MK1 is designed to be operated from a power bank or car USB charger.
 The networks are stored in a CSV file on a FAT12 or FAT16 filesystem.
 
-The NetLog MK1 will appear as a USB disk once connected to a computer.
+The NetLog MK1 will appear as a USB drive once connected to a computer.
 From there, you can open the CSV file with any spreadsheet software (like LibreOffice, Google Sheets, etc).
 
 - [Build your own](docs/build_tutorial.md)
@@ -16,7 +16,7 @@ From there, you can open the CSV file with any spreadsheet software (like LibreO
 | Light Code     | Meaning                               |
 |----------------|---------------------------------------|
 | Static yellow  | Device starting                       |
-| Static red     | FS error. Format with FAT12 or FAT16  |
+| Static red     | FS error (format with FAT12 or FAT16) |
 | Blinking green | Establishing GPS fix                  |
-| Blinking red   | Could not communicate with GPS module |
+| Blinking red   | No connection to GPS module           |
 | White blink    | Network found                         |

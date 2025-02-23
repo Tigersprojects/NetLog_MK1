@@ -37,4 +37,4 @@ with `sdX` being the block device, which you can find by running `lsblk`.
 Now the device should be ready for use.
 
 > The BSSIDs text file the device creates contains the BSSID
-    of every network it has already found (which networks it should ignore).
+    of every network it has already found (all networks it should ignore).
