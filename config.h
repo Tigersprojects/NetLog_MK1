@@ -15,7 +15,7 @@ const char *data_filename = "NetLog_data.csv",
            *bssid_filename = "NetLog_bssids.txt",
 
            // USB info //
-           *netlog_ver = "1.16",
+           *netlog_ver = "1.17",
            *netlog_vid = "NetLog",
            *netlog_name = "NetLog MK1";
 

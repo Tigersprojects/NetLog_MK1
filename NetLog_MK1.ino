@@ -25,7 +25,7 @@
 #include <Adafruit_NeoPixel.h>
 
 #include "SPI.h"
-#include "SdFat.h"
+#include "SdFat_Adafruit_Fork.h"
 #include "Adafruit_SPIFlash.h"
 #include "Adafruit_TinyUSB.h"
 
@@ -169,7 +169,14 @@ void setup() {
   rgb.setBrightness(neopixel_brightness);
   rgb.show();
 
-  delay(500);
+  // Poll the GPS module for 1s to see if there is available data from it
+  for (unsigned long start = millis(); millis() - start < 1000;) {
+    while (neogps.available()) {
+      if (gps.encode(neogps.read())) {
+        gps_new_data = true;
+      }
+    }
+  }
 }
 
 
@@ -177,11 +184,9 @@ void setup() {
 void loop() {
 
   // Check if there is available data from the GPS module
-  for (unsigned long start = millis(); millis() - start < 1000;) {
-    while (neogps.available()) {
-      if (gps.encode(neogps.read())) {
-        gps_new_data = true;
-      }
+  while (neogps.available()) {
+    if (gps.encode(neogps.read())) {
+      gps_new_data = true;
     }
   }
 
